@@ -17,11 +17,10 @@ function App() {
   const handleChange=(e)=>{
     setShowDefinition(false);
     const word = e.target.value;
-    setInputText(word.toLowerCase());
+    setInputText(word);
   }
   const handleSearch = () => {
-    const item = dictionary.find((item)=>item.word.toLowerCase()===inputText);
-    console.log(item);
+    const item = dictionary.find((item)=>item.word.toLowerCase()===inputText.toLowerCase());
     if (item) {
       setDefinition(item.meaning);
     }else{
